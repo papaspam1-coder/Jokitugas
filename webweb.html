@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joki Tugas Gika Creatifhouse | Cepat, Rapi, Terpercaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;background:#0f172a;color:#fff}header{
+  padding:80px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#1e3a8a,#2563eb);
+}
+header h1{font-size:42px;font-weight:700}
+header p{margin:15px 0;font-size:18px;opacity:.9}
+.cta{
+  display:inline-block;
+  margin-top:20px;
+  background:#facc15;
+  color:#000;
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.3s;
+}
+.cta:hover{transform:scale(1.05)}
+
+section{padding:60px 20px;text-align:center}
+h2{margin-bottom:30px}
+
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  color:#000;
+  border-radius:16px;
+  padding:25px;
+  width:260px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-8px)}
+
+.highlight{
+  border:3px solid #facc15;
+}
+
+form{
+  max-width:500px;
+  margin:auto;
+  background:#fff;
+  color:#000;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-family:'Poppins',sans-serif;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  background:#22c55e;
+  border:none;
+  color:#fff;
+  font-weight:600;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.3s;
+}
+button:hover{background:#16a34a}
+
+footer{
+  padding:20px;
+  text-align:center;
+  opacity:.7;
+}
+
+  </style>
+</head>
+<body><header>
+  <h1>Joki Tugas Gika Creatifhouse</h1>
+  <p>Tugas kelar cepat, nilai aman, tanpa ribet</p>
+  <a href="#order" class="cta">Order Sekarang</a>
+</header><section>
+  <h2>Kenapa Pilih Kami?</h2>
+  <div class="grid">
+    <div class="card"><h3>Cepat</h3><p>Bisa express sesuai deadline</p></div>
+    <div class="card"><h3>Original</h3><p>100% bebas plagiarisme</p></div>
+    <div class="card"><h3>Revisi</h3><p>Gratis sampai ACC</p></div>
+  </div>
+</section><section>
+  <h2>Pricelist</h2>
+  <div class="grid">
+    <div class="card"><h3>Makalah</h3><p>Rp5.000/lembar</p></div>
+    <div class="card highlight"><h3>Essay</h3><p>Rp10.000/lembar</p></div>
+    <div class="card"><h3>PPT</h3><p>Rp5.000/slide</p></div>
+    <div class="card"><h3>Skripsi</h3><p>Mulai 500rb</p></div>
+  </div>
+</section><section id="order">
+  <h2>Form Order Otomatis</h2>
+  <form onsubmit="kirimWA(event)">
+    <input type="text" id="nama" placeholder="Nama" required>
+    <input type="text" id="tugas" placeholder="Jenis Tugas" required>
+    <input type="number" id="jumlah" placeholder="Jumlah (lembar/slide)" required>
+    <input type="date" id="deadline" required>
+    <textarea id="catatan" placeholder="Catatan tambahan"></textarea>
+    <button type="submit">Kirim ke WhatsApp</button>
+  </form>
+</section><section>
+  <h2>Testimoni</h2>
+  <div class="grid">
+    <div class="card"><p>"Cepat & rapi, recommended!"</p><strong>- Andi</strong></div>
+    <div class="card"><p>"Nilai langsung naik!"</p><strong>- Siti</strong></div>
+  </div>
+</section><footer>
+  <p>© 2026 Joki Tugas Gika Creatifhouse</p>
+</footer><script>
+function kirimWA(e){
+  e.preventDefault();
+
+  let nama=document.getElementById('nama').value;
+  let tugas=document.getElementById('tugas').value;
+  let jumlah=document.getElementById('jumlah').value;
+  let deadline=document.getElementById('deadline').value;
+  let catatan=document.getElementById('catatan').value;
+
+  let pesan = `Halo, saya ingin order:
+Nama: ${nama}
+Tugas: ${tugas}
+Jumlah: ${jumlah}
+Deadline: ${deadline}
+Catatan: ${catatan}`;
+  pesan = encodeURIComponent(pesan);
+
+  let nomor='6285882101866'; // GANTI NOMOR
+
+  window.open(`https://wa.me/${nomor}?text=${pesan}`,'_blank');
+}
+</script><div id="popup" style="position:fixed;bottom:20px;left:20px;background:#fff;color:#000;padding:15px 20px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.3);display:none;z-index:999;font-size:14px;">
+  <strong id="popupText"></strong>
+</div><script>
+const namaRandom = ["Andi","Siti","Rizky","Dewi","Fajar","Nanda","Aulia","Reza"];
+const tugasRandom = ["Makalah","Essay","PPT","Skripsi"];
+
+function showPopup(){
+  let nama = namaRandom[Math.floor(Math.random()*namaRandom.length)];
+  let tugas = tugasRandom[Math.floor(Math.random()*tugasRandom.length)];
+
+  let text = `${nama} baru saja order ${tugas}`;
+  let popup = document.getElementById('popup');
+  let popupText = document.getElementById('popupText');
+
+  popupText.innerText = text;
+  popup.style.display = 'block';
+
+  setTimeout(()=>{
+    popup.style.display = 'none';
+  },4000);
+}
+
+setInterval(showPopup,8000);
+</script></body>
+</html>
